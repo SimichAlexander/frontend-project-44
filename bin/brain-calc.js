@@ -2,4 +2,4 @@
 
 import engine from '../src/index.js';
 
-engine('brain-even');
+engine('brain-calc');
