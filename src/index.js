@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import isEvenNumber from './games/brain-even.js';
 import calculator from './games/brain-calc.js';
+import greatestCommonDivisor from './games/brain-gcd.js';
 
 // export const getRandomInt = (max) => Math.floor(Math.random() * max);
 
@@ -16,6 +17,8 @@ const engine = (brainGame) => {
     console.log('What is the result of the expression?');
   } else if (brainGame === 'brain-even') {
     console.log('Answer \'yes\' if the number is even, otherwise answer \'no\'.');
+  } else if (brainGame === 'brain-gcd') {
+    console.log('Find the greatest common divisor of given numbers.');
   }
 
   while (correctAnswerCounter < maxRoundNumber) {
@@ -23,6 +26,8 @@ const engine = (brainGame) => {
       expectedAnswer = calculator();
     } else if (brainGame === 'brain-even') {
       expectedAnswer = isEvenNumber();
+    } else if (brainGame === 'brain-gcd') {
+      expectedAnswer = greatestCommonDivisor();
     } else {
       console.log('Error');
       return 0;
