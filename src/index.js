@@ -3,6 +3,7 @@ import isEvenNumber from './games/brain-even.js';
 import calculator from './games/brain-calc.js';
 import greatestCommonDivisor from './games/brain-gcd.js';
 import arithmProgression from './games/brain-progression.js';
+import isPrimeNumber from './games/brain-prime.js';
 
 // export const getRandomInt = (max) => Math.floor(Math.random() * max);
 
@@ -22,6 +23,8 @@ const engine = (brainGame) => {
     console.log('Find the greatest common divisor of given numbers.');
   } else if (brainGame === 'brain-progression') {
     console.log('What number is missing in the progression?');
+  } else if (brainGame === 'brain-prime') {
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   }
 
   while (correctAnswerCounter < maxRoundNumber) {
@@ -33,6 +36,8 @@ const engine = (brainGame) => {
       expectedAnswer = greatestCommonDivisor();
     } else if (brainGame === 'brain-progression') {
       expectedAnswer = arithmProgression();
+    } else if (brainGame === 'brain-prime') {
+      expectedAnswer = isPrimeNumber();
     } else {
       console.log('Error');
       return 0;
