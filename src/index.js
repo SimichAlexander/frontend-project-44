@@ -24,7 +24,7 @@ const engine = (brainGame) => {
   } else if (brainGame === 'brain-progression') {
     console.log('What number is missing in the progression?');
   } else if (brainGame === 'brain-prime') {
-    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+    console.log('Answer \'yes\' if given number is prime. Otherwise answer \'no\'.');
   }
 
   while (correctAnswerCounter < maxRoundNumber) {
