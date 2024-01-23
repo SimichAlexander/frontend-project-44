@@ -18,13 +18,13 @@ const engine = (brainGame) => {
   if (brainGame === 'brain-calc') {
     console.log('What is the result of the expression?');
   } else if (brainGame === 'brain-even') {
-    console.log('Answer \'yes\' if the number is even, otherwise answer \'no\'.');
+    console.log('Answer "yes" if the number is even, otherwise answer "no".');
   } else if (brainGame === 'brain-gcd') {
     console.log('Find the greatest common divisor of given numbers.');
   } else if (brainGame === 'brain-progression') {
     console.log('What number is missing in the progression?');
   } else if (brainGame === 'brain-prime') {
-    console.log('Answer \'yes\' if given number is prime. Otherwise answer \'no\'.');
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   }
 
   while (correctAnswerCounter < maxRoundNumber) {
