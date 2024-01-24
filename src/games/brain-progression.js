@@ -1,5 +1,5 @@
 import engine from '../index.js';
-import { getRandomInt } from '../utils.js'
+import getRandomInt from '../utils.js';
 
 const arithmProgression = () => {
   const maxRoundNumber = 3;
@@ -13,7 +13,7 @@ const arithmProgression = () => {
     const randomIndexNumber = getRandomInt(10);
     const arithmProgrArray = [initialArithmNumber];
     const arithmProgrArrayForPrint = [];
-    
+
     let temp = initialArithmNumber;
 
     for (let j = 0; j < lengthArithmNumber - 1; j += 1) {

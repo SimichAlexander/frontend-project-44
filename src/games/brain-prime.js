@@ -1,5 +1,5 @@
 import engine from '../index.js';
-import { getRandomInt } from '../utils.js'
+import getRandomInt from '../utils.js';
 
 const isPrime = (number) => {
   let flag = 0;
@@ -8,13 +8,8 @@ const isPrime = (number) => {
       flag += 1;
     }
   }
-
-  if (flag > 2) {
-    return 'no';
-  } else {
-    return 'yes';
-  }
-}
+  return (flag > 2) ? 'no' : 'yes';
+};
 
 const isPrimeNumber = () => {
   const maxRoundNumber = 3;
@@ -30,7 +25,7 @@ const isPrimeNumber = () => {
 
     array.push([question, expectedAnswer]);
   }
-  
+
   engine(description, array);
 };
 

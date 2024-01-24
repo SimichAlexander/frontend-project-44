@@ -7,20 +7,22 @@ const engine = (description, [[quest1, answ1], [quest2, answ2], [quest3, answ3]]
 
   console.log(description);
 
-  let arr = [[quest1, answ1], [quest2, answ2], [quest3, answ3]];
-  for (const item of arr) {
-    console.log(item[0]);
+  const arr = [[quest1, answ1], [quest2, answ2], [quest3, answ3]];
+  for (let i = 0; i < arr.length; i += 1) {
+    console.log(arr[i][0]);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === item[1]) {
+    if (userAnswer === arr[i][1]) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${item[1]}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${arr[i][1]}'.`);
       console.log(`Let's try again, ${name}!`);
       return 0;
     }
   }
+
   console.log(`Congratulations, ${name}!`);
+
   return 0;
 };
 

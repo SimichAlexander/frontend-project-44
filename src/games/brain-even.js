@@ -1,5 +1,5 @@
 import engine from '../index.js';
-import { getRandomInt } from '../utils.js'
+import getRandomInt from '../utils.js';
 
 const isEvenNumber = () => {
   const maxRoundNumber = 3;

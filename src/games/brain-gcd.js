@@ -1,15 +1,16 @@
 import engine from '../index.js';
-import { getRandomInt } from '../utils.js'
+import getRandomInt from '../utils.js';
 
 const findMax = (arr) => {
-  let max = arr[0]
-  for (const item of arr) {
-    if (item >= max) {
-      max = item;
+  let max = arr[0];
+  for (let m = 1; m < arr.length; m += 1) {
+    if (arr[m] > max) {
+      max = arr[m];
     }
   }
+
   return max;
-}
+};
 
 const greatestCommonDivisor = () => {
   const maxRoundNumber = 3;
@@ -33,17 +34,16 @@ const greatestCommonDivisor = () => {
         secondNumberDivisors.push(k);
       }
     }
-    
+
     const question = `Question: ${firstRandomNumber} ${secondRandomNumber}`;
 
     const intersection = firstNumberDivisors.filter((x) => secondNumberDivisors.includes(x));
-    console.log(intersection);
     const expectedAnswer = findMax(intersection).toString();
     // const expectedAnswer = Math.max.apply(null, intersection).toString();
-    
+
     array.push([question, expectedAnswer]);
   }
-  
+
   engine(description, array);
 };
 
