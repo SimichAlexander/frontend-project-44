@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import engine from '../src/index.js';
+import isEvenNumber from '../src/games/brain-even.js';
 
-engine('brain-even');
+isEvenNumber();

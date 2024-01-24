@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import engine from '../src/index.js';
+import greatestCommonDivisor from '../src/games/brain-gcd.js';
 
-engine('brain-gcd');
+greatestCommonDivisor();

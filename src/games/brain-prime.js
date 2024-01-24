@@ -1,23 +1,37 @@
-const isPrimeNumber = () => {
-  const RandomNumber = Math.floor(Math.random() * 50);
-  let flag = 0;
-  let expectedAnswer;
+import engine from '../index.js';
+import { getRandomInt } from '../utils.js'
 
-  for (let i = 1; i <= RandomNumber; i += 1) {
-    if (RandomNumber % i === 0) {
+const isPrime = (number) => {
+  let flag = 0;
+  for (let j = 1; j <= number; j += 1) {
+    if (number % j === 0) {
       flag += 1;
     }
   }
 
   if (flag > 2) {
-    expectedAnswer = 'no';
+    return 'no';
   } else {
-    expectedAnswer = 'yes';
+    return 'yes';
   }
+}
 
-  console.log(`Question: ${RandomNumber}`);
+const isPrimeNumber = () => {
+  const maxRoundNumber = 3;
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const array = [];
+  let expectedAnswer;
 
-  return expectedAnswer;
+  for (let i = 0; i < maxRoundNumber; i += 1) {
+    const RandomNumber = getRandomInt(50);
+    expectedAnswer = isPrime(RandomNumber);
+
+    const question = `Question: ${RandomNumber}`;
+
+    array.push([question, expectedAnswer]);
+  }
+  
+  engine(description, array);
 };
 
 export default isPrimeNumber;

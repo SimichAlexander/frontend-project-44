@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import engine from '../src/index.js';
+import isPrimeNumber from '../src/games/brain-prime.js';
 
-engine('brain-prime');
+isPrimeNumber();

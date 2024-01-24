@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import engine from '../src/index.js';
+import arithmProgression from '../src/games/brain-progression.js';
 
-engine('brain-progression');
+arithmProgression();

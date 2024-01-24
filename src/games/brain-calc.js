@@ -1,23 +1,37 @@
+import engine from '../index.js';
+import { getRandomInt } from '../utils.js'
+
 const calculator = () => {
-  const operation = ['+', '-', '*'];
-  const firstRandomNumber = Math.floor(Math.random() * 20);
-  const secondRandomNumber = Math.floor(Math.random() * 20);
-  const randomOperaton = Math.floor(Math.random() * operation.length);
+  const maxRoundNumber = 3;
+  const description = 'What is the result of the expression?';
+  const array = [];
   let expectedAnswer;
 
-  if (operation[randomOperaton] === '+') {
-    expectedAnswer = (firstRandomNumber + secondRandomNumber).toString();
-  } else if (operation[randomOperaton] === '-') {
-    expectedAnswer = (firstRandomNumber - secondRandomNumber).toString();
-  } else if (operation[randomOperaton] === '*') {
-    expectedAnswer = (firstRandomNumber * secondRandomNumber).toString();
-  } else {
-    console.log('Error');
-    return 0;
-  }
-  console.log(`Question: ${firstRandomNumber} ${operation[randomOperaton]} ${secondRandomNumber}`);
+  const operation = ['+', '-', '*'];
+  
+  for (let i = 0; i < maxRoundNumber; i += 1) {
+    const firstRandomNumber = getRandomInt(20);
+    const secondRandomNumber = getRandomInt(20);
+    const randomOperaton = getRandomInt(operation.length);
+    
+    const question = `Question: ${firstRandomNumber} ${operation[randomOperaton]} ${secondRandomNumber}`;
 
-  return expectedAnswer;
+    if (operation[randomOperaton] === '+') {
+      expectedAnswer = (firstRandomNumber + secondRandomNumber).toString();
+    } else if (operation[randomOperaton] === '-') {
+      expectedAnswer = (firstRandomNumber - secondRandomNumber).toString();
+    } else if (operation[randomOperaton] === '*') {
+      expectedAnswer = (firstRandomNumber * secondRandomNumber).toString();
+    }
+    // else {
+    //   throw new Error('Error!');
+    // }
+
+    array.push([question, expectedAnswer]);
+  }
+
+  engine(description, array);
+
 };
 
 export default calculator;

@@ -2,11 +2,11 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/SimichAlexander/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/SimichAlexander/frontend-project-44/actions)",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Alexander Simich <simichalexander@gmail.com> (https://github.com/SimichAlexander)",
   "license": "ISC",
   "type": "module",
   "bin": {
@@ -18,12 +18,12 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "dependencies": {
-    "eslint": "^8.56.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.1",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jest": "^27.6.3",
     "jest": "^29.7.0"
   }

@@ -1,15 +1,27 @@
+import engine from '../index.js';
+import { getRandomInt } from '../utils.js'
+
 const isEvenNumber = () => {
-  const randomNumber = Math.floor(Math.random() * 20);
+  const maxRoundNumber = 3;
+  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const array = [];
   let expectedAnswer;
 
-  if (randomNumber % 2 === 0) {
-    expectedAnswer = 'yes';
-  } else {
-    expectedAnswer = 'no';
-  }
-  console.log(`Question: ${randomNumber}`);
+  for (let i = 0; i < maxRoundNumber; i += 1) {
+    const randomNumber = getRandomInt(20);
 
-  return expectedAnswer;
+    const question = `Question: ${randomNumber}`;
+
+    if (randomNumber % 2 === 0) {
+      expectedAnswer = 'yes';
+    } else {
+      expectedAnswer = 'no';
+    }
+
+    array.push([question, expectedAnswer]);
+  }
+
+  engine(description, array);
 };
 
 export default isEvenNumber;
