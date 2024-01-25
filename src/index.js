@@ -13,18 +13,15 @@ const engine = (description, arr) => {
     console.log(arr[i][0]);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === arr[i][1]) {
-      console.log('Correct!');
-    } else {
+    if (userAnswer !== arr[i][1]) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${arr[i][1]}'.`);
       console.log(`Let's try again, ${name}!`);
-      return 0;
+      return;
     }
+    console.log('Correct!');
   }
 
   console.log(`Congratulations, ${name}!`);
-
-  return 0;
 };
 
 export default engine;
