@@ -1,4 +1,4 @@
-import engine from '../index.js';
+import engine, { defaultRoundsCount } from '../index.js';
 import getRandomInt from '../utils.js';
 
 const isPrime = (number) => {
@@ -12,12 +12,11 @@ const isPrime = (number) => {
 };
 
 const isPrimeNumber = () => {
-  const maxRoundNumber = 3;
   const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const array = [];
   let expectedAnswer;
 
-  for (let i = 0; i < maxRoundNumber; i += 1) {
+  for (let i = 0; i < defaultRoundsCount; i += 1) {
     const RandomNumber = getRandomInt(50);
     expectedAnswer = isPrime(RandomNumber);
 

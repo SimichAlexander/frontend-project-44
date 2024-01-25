@@ -1,13 +1,14 @@
 import readlineSync from 'readline-sync';
 
-const engine = (description, [[quest1, answ1], [quest2, answ2], [quest3, answ3]]) => {
+export const defaultRoundsCount = 3;
+
+const engine = (description, arr) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
   console.log(description);
 
-  const arr = [[quest1, answ1], [quest2, answ2], [quest3, answ3]];
   for (let i = 0; i < arr.length; i += 1) {
     console.log(arr[i][0]);
     const userAnswer = readlineSync.question('Your answer: ');
@@ -27,3 +28,8 @@ const engine = (description, [[quest1, answ1], [quest2, answ2], [quest3, answ3]]
 };
 
 export default engine;
+
+// export {
+//   engine as default,
+//   defaultRoundsCount,
+// };

@@ -1,4 +1,4 @@
-import engine from '../index.js';
+import engine, { defaultRoundsCount } from '../index.js';
 import getRandomInt from '../utils.js';
 
 const findMax = (arr) => {
@@ -13,11 +13,10 @@ const findMax = (arr) => {
 };
 
 const greatestCommonDivisor = () => {
-  const maxRoundNumber = 3;
   const description = 'Find the greatest common divisor of given numbers.';
   const array = [];
 
-  for (let i = 0; i < maxRoundNumber; i += 1) {
+  for (let i = 0; i < defaultRoundsCount; i += 1) {
     const firstRandomNumber = getRandomInt(50) + 1;
     const secondRandomNumber = getRandomInt(50) + 1;
     const firstNumberDivisors = [];
@@ -39,7 +38,6 @@ const greatestCommonDivisor = () => {
 
     const intersection = firstNumberDivisors.filter((x) => secondNumberDivisors.includes(x));
     const expectedAnswer = findMax(intersection).toString();
-    // const expectedAnswer = Math.max.apply(null, intersection).toString();
 
     array.push([question, expectedAnswer]);
   }

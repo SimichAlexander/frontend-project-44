@@ -1,13 +1,12 @@
-import engine from '../index.js';
+import engine, { defaultRoundsCount } from '../index.js';
 import getRandomInt from '../utils.js';
 
 const isEvenNumber = () => {
-  const maxRoundNumber = 3;
   const description = 'Answer "yes" if the number is even, otherwise answer "no".';
   const array = [];
   let expectedAnswer;
 
-  for (let i = 0; i < maxRoundNumber; i += 1) {
+  for (let i = 0; i < defaultRoundsCount; i += 1) {
     const randomNumber = getRandomInt(20);
 
     const question = `Question: ${randomNumber}`;

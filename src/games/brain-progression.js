@@ -1,13 +1,12 @@
-import engine from '../index.js';
+import engine, { defaultRoundsCount } from '../index.js';
 import getRandomInt from '../utils.js';
 
 const arithmProgression = () => {
-  const maxRoundNumber = 3;
   const description = 'What number is missing in the progression?';
   const array = [];
   const lengthArithmNumber = 10;
 
-  for (let i = 0; i < maxRoundNumber; i += 1) {
+  for (let i = 0; i < defaultRoundsCount; i += 1) {
     const initialArithmNumber = getRandomInt(10) + 1;
     const stepArithmNumber = getRandomInt(5) + 2;
     const randomIndexNumber = getRandomInt(10);
