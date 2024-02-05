@@ -1,24 +1,30 @@
 import engine, { defaultRoundsCount } from '../index.js';
 import getRandomInt from '../utils.js';
 
+const generateArithmProgression = (initialNumber, stepNumber, lengthNumber) => {
+  const arithmProgrArray = [initialNumber];
+  let temp = initialNumber;
+
+  for (let i = 0; i < lengthNumber - 1; i += 1) {
+    temp += stepNumber;
+    arithmProgrArray.push(temp);
+  }
+
+  return arithmProgrArray;
+};
+
 const arithmProgression = () => {
   const description = 'What number is missing in the progression?';
   const array = [];
-  const lengthArithmNumber = 10;
+  const lengthNumber = 10;
 
   for (let i = 0; i < defaultRoundsCount; i += 1) {
-    const initialArithmNumber = getRandomInt(10) + 1;
-    const stepArithmNumber = getRandomInt(5) + 2;
+    const initialNumber = getRandomInt(10) + 1;
+    const stepNumber = getRandomInt(5) + 2;
     const randomIndexNumber = getRandomInt(10);
-    const arithmProgrArray = [initialArithmNumber];
     const arithmProgrArrayForPrint = [];
 
-    let temp = initialArithmNumber;
-
-    for (let j = 0; j < lengthArithmNumber - 1; j += 1) {
-      temp += stepArithmNumber;
-      arithmProgrArray.push(temp);
-    }
+    const arithmProgrArray = generateArithmProgression(initialNumber, stepNumber, lengthNumber);
 
     for (let k = 0; k < arithmProgrArray.length; k += 1) {
       if (k === randomIndexNumber) {

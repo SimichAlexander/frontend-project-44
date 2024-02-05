@@ -1,6 +1,8 @@
 import engine, { defaultRoundsCount } from '../index.js';
 import getRandomInt from '../utils.js';
 
+const isEven = (number) => (number % 2 === 0);
+
 const isEvenNumber = () => {
   const description = 'Answer "yes" if the number is even, otherwise answer "no".';
   const array = [];
@@ -11,11 +13,7 @@ const isEvenNumber = () => {
 
     const question = `Question: ${randomNumber}`;
 
-    if (randomNumber % 2 === 0) {
-      expectedAnswer = 'yes';
-    } else {
-      expectedAnswer = 'no';
-    }
+    expectedAnswer = isEven(randomNumber) ? 'yes' : 'no';
 
     array.push([question, expectedAnswer]);
   }

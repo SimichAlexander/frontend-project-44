@@ -8,7 +8,7 @@ const isPrime = (number) => {
       flag += 1;
     }
   }
-  return (flag > 2) ? 'no' : 'yes';
+  return (flag < 3);
 };
 
 const isPrimeNumber = () => {
@@ -17,10 +17,9 @@ const isPrimeNumber = () => {
   let expectedAnswer;
 
   for (let i = 0; i < defaultRoundsCount; i += 1) {
-    const RandomNumber = getRandomInt(50);
-    expectedAnswer = isPrime(RandomNumber);
-
-    const question = `Question: ${RandomNumber}`;
+    const randomNumber = getRandomInt(50);
+    expectedAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+    const question = `Question: ${randomNumber}`;
 
     array.push([question, expectedAnswer]);
   }

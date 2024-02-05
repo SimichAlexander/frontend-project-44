@@ -15,14 +15,18 @@ const calculator = () => {
 
     const question = `Question: ${firstRandomNumber} ${operation[randomOperaton]} ${secondRandomNumber}`;
 
-    if (operation[randomOperaton] === '+') {
-      expectedAnswer = (firstRandomNumber + secondRandomNumber).toString();
-    } else if (operation[randomOperaton] === '-') {
-      expectedAnswer = (firstRandomNumber - secondRandomNumber).toString();
-    } else if (operation[randomOperaton] === '*') {
-      expectedAnswer = (firstRandomNumber * secondRandomNumber).toString();
-    } else {
-      throw new Error('Error!');
+    switch (operation[randomOperaton]) {
+      case '+':
+        expectedAnswer = (firstRandomNumber + secondRandomNumber).toString();
+        break;
+      case '-':
+        expectedAnswer = (firstRandomNumber - secondRandomNumber).toString();
+        break;
+      case '*':
+        expectedAnswer = (firstRandomNumber * secondRandomNumber).toString();
+        break;
+      default:
+        throw new Error('Error!');
     }
 
     array.push([question, expectedAnswer]);
