@@ -17,7 +17,7 @@ const isPrimeNumber = () => {
   let expectedAnswer;
 
   for (let i = 0; i < defaultRoundsCount; i += 1) {
-    const randomNumber = getRandomInt(50);
+    const randomNumber = getRandomInt(50) + 1;
     expectedAnswer = isPrime(randomNumber) ? 'yes' : 'no';
     const question = `Question: ${randomNumber}`;
 
