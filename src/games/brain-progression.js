@@ -22,20 +22,13 @@ const arithmProgression = () => {
     const initialNumber = getRandomInt(10) + 1;
     const stepNumber = getRandomInt(5) + 2;
     const randomIndexNumber = getRandomInt(10);
-    const arithmProgrArrayForPrint = [];
 
     const arithmProgrArray = generateArithmProgression(initialNumber, stepNumber, lengthNumber);
 
-    for (let k = 0; k < arithmProgrArray.length; k += 1) {
-      if (k === randomIndexNumber) {
-        arithmProgrArrayForPrint.push('..');
-      } else {
-        arithmProgrArrayForPrint.push(arithmProgrArray[k].toString());
-      }
-    }
-
-    const question = `Question: ${arithmProgrArrayForPrint.join(' ')}`;
     const expectedAnswer = arithmProgrArray[randomIndexNumber].toString();
+    arithmProgrArray[randomIndexNumber] = '..';
+
+    const question = `Question: ${arithmProgrArray.join(' ')}`;
 
     array.push([question, expectedAnswer]);
   }
